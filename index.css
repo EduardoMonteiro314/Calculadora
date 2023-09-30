@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+*{
+  margin-block: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Mooli', sans-serif;
+}
+body,html{
+  height: 100%;
+  width: 100vw;
+}
+
+body{
+  background: linear-gradient(45deg, #E96767, rgb(192, 132, 132));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+#caixa{
+  background: hsl(0, 4%, 38%);
+  height: 70%; width: 22rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template: 1.3fr repeat(5,1fr) / repeat(4,1fr);
+  gap: 0.5rem;
+  grid-template-areas: "visor visor visor visor" 
+                       "botoes botoes botoes botoes";
+  border-radius: 0.4rem;
+  box-shadow: 5px 5px 20px black;
+}
+#visor{
+  grid-area: visor;
+   background: rgba(255, 255, 255, 0.658);
+  margin-bottom: 1rem;
+  color: black;
+  font-size: 120%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1.5rem 0.2rem 0.6rem 3rem;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  user-select: none;
+}
+
+.botao{
+  background: rgb(43, 40, 40);
+  color: white;
+  border-radius: 0.7rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: inset -1px -1px 2px 1px gray;
+  outline: none;
+}
+.botao:hover {
+  filter: brightness(0.95);
+}
+.botao:active {
+  box-shadow: inset 1px 1px 2px 1px gray;
+}
+.ponto{
+  font-size: 150%;
+}
+#apagar{
+  transform: rotate(180deg);
+}
+@media screen and (max-width:600px){
+  #caixa{
+    min-width: 100vw;
+    min-height: calc(100vh - 50px);
+    display: grid;
+    grid-template: 1.2fr repeat(5,1fr) / repeat(4,1fr);
+    gap: 0.3rem; 
+    grid-template-areas: "visor visor visor visor" 
+                       "botoes botoes botoes botoes";
+  }
+  .botao{
+    border-radius: 1rem;
+    aspect-ratio: 1 / 1.15;
+  }
+}
